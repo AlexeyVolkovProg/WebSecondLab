@@ -1,0 +1,255 @@
+.header-section{
+ display: flex;
+ justify-content: space-between ; /* Выравнивание вдоль главной оси */
+ flex-wrap: wrap;
+ padding: 0; /* Убираем внутренние отступы */
+ margin: 0; /* Убираем внешние отступы */
+ background: white;
+ font-family: Arial, serif;
+ opacity: 0.75;
+}
+
+/* Стилизация заголовка */
+.lab-info p {
+ font-size: 40px; /* Размер шрифта */
+ font-weight: bold; /* Жирный шрифт */
+ text-transform: uppercase; /* Преобразование текста в заглавные буквы */
+ font-family: "cursive", serif; /* Выберите желаемый шрифт */
+ color: #000000; /* Цвет текста */
+ opacity: 1;
+}
+
+.main-question{
+ margin: 40px;
+ text-align: center;
+ font-size: 40px;
+ font-weight: bold;
+ text-transform: uppercase;
+ font-family: "cursive", serif;
+ color: #1e1d0d;
+ background-color: #f0f0f0; /* Цвет фона */
+ padding: 10px 20px; /* Внутренний отступ вокруг текста */
+ border: 2px solid #1e1d0d; /* Толщина, стиль и цвет рамки */
+ border-radius: 10px; /* Закругление углов рамки */
+ opacity: 1;
+}
+
+
+.logo{
+ flex:1;
+ text-align: center;
+ display: flex; /* Используем флекс-контейнер для выравнивания по центру вертикально */
+ flex-direction: column; /* Устанавливаем направление контейнера на столбцы */
+ justify-content: center; /* Выравнивание по центру вертикально */
+ align-items: center; /* Выравнивание по центру горизонтально */
+}
+
+.owner-info{
+ flex:1;
+ text-align: center;
+ display: flex; /* Используем флекс-контейнер для выравнивания по центру вертикально */
+ flex-direction: column; /* Устанавливаем направление контейнера на столбцы */
+ justify-content: center; /* Выравнивание по центру вертикально */
+ align-items: center; /* Выравнивание по центру горизонтально */
+ font-weight: bold; /* Жирный шрифт */
+}
+
+.lab-info{
+ flex:1;
+ background: #007bff;
+ text-align: center;
+ border: 5px solid #0c0a0a; /* Толщина, стиль и цвет рамки */
+}
+
+.main-content{
+ display: flex;
+ justify-content: space-between ; /* Выравнивание вдоль главной оси */
+ width: 100%;
+ height: 100%;
+ flex-wrap: wrap;
+}
+
+.diagram-section,
+.user-form-section,
+.table-section {
+ flex: 1; /* Установка равной доли пространства для каждой составляющей */
+ padding: 10px; /* Добавление отступов, если необходимо */
+ box-sizing: border-box; /* Учесть padding внутри элементов */
+ min-width: 400px;
+}
+
+.diagram-section{
+ flex:1;
+ background: #1e1d0d;
+ opacity: 75%;
+}
+
+.diagram_image{ /* Картинку в половину flexbox ставим */
+ max-width: 100%;
+ height: auto;
+ border-radius: 10px;
+ box-shadow: 0 0 0 3px;
+}
+
+.user-form-section {
+ flex: 1;
+ background: #1e1d0d;
+ opacity: 75%;
+ display: flex;
+ flex-direction: column; /* Устанавливаем направление колонны для вертикального центрирования */
+ align-items: center; /* Центрирование по горизонтали */
+ justify-content: flex-start; /* Выравнивание по верхнему краю */
+ padding-top: 20px; /* Небольшой отступ сверху */
+}
+
+.user-form {
+ box-sizing: border-box; /* Установим box-sizing в border-box */
+ background-color: #fff;
+ border: 3px solid #000; /* Черная рамка */
+ border-radius: 5px;
+ padding: 20px;
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+ max-width: calc(100% - 20px); /* Учтем отступы слева и справа */
+ width: 100%;
+ margin: 0 10px; /* Отступы слева и справа по 10px */
+}
+
+.table-section{
+ flex:1;
+ background: #1e1d0d;
+ opacity: 75%;
+}
+
+.table-results{
+ background: #f7f7f7;
+ border-radius:10px ;
+ border: 3px solid black;
+ max-width: 100%;
+ text-align: center;
+ margin: 0 auto; /* Горизонтальное центрирование */
+}
+
+.table-results table {
+ width: 100%;
+ border-collapse: collapse;
+}
+
+.table-results th, .table-results td {
+ padding: 15px;
+ border: 1px solid #000;
+}
+
+.table-results th {
+ background-color: #007bff;
+ color: #fff;
+ font-weight: bold;
+}
+
+.table-results tr:nth-child(even) {
+ background-color: #f2f2f2;
+}
+
+.table-results tr:hover {
+ background-color: #ddd;
+}
+
+/* Дополнительные стили для улучшения внешнего вида таблицы */
+.table-results {
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-results table {
+ border-radius: 10px;
+}
+
+.table-results th, .table-results td {
+ text-align: center;
+}
+
+.table-results th, .table-results td {
+ transition: background-color 0.3s ease;
+}
+
+
+body{
+ background-image: url("../images/forest.jpg"); /* Путь к изображению фона */
+ background-size: cover; /* Масштабирование изображения фона, чтобы оно заполнило весь экран */
+ background-repeat: no-repeat; /* Запрет повторения изображения фона */
+ background-attachment: fixed; /* Фон остается зафиксированным при прокрутке страницы */
+}
+
+/* Стили для формы */
+.user-form {
+ background-color: #fff;
+ border: 1px solid #ddd;
+ border-radius: 5px;
+ padding: 20px;
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+ max-width: 400px;
+ width: 100%;
+}
+
+/* Стили для разделов формы */
+.block {
+ margin-bottom: 15px;
+}
+
+/* Стили для меток */
+label {
+ font-weight: bold;
+ display: block;
+ margin-bottom: 5px;
+}
+
+/* Стили для кнопок */
+.x_button {
+ background-color: #007bff;
+ color: #fff;
+ border: none;
+ padding: 10px 15px;
+ margin-right: 5px;
+ margin-top: 5px;
+ cursor: pointer;
+ border-radius: 5px;
+}
+
+.x_button.selectButtonX {
+ background-color: #ffd500; /* Цвет фона при нажатии */
+}
+/* Стили для текстового поля Y */
+#Y {
+ width: 100%;
+ padding: 20px 20px 20px 20px;
+ border: 1px solid #0c0a0a;
+ border-radius: 5px;
+ box-sizing: border-box;
+}
+
+#R {
+ width: 100%;
+ padding: 20px 20px 20px 20px;
+ border: 1px solid #0c0a0a;
+ border-radius: 5px;
+ box-sizing: border-box;
+}
+
+/* Стили для кнопок отправки и сброса */
+button[type="submit"],
+button[type="reset"] {
+ background-color: #007bff;
+ color: #fff;
+ border: none;
+ padding: 10px 20px;
+ margin-right: 10px;
+ cursor: pointer;
+ border-radius: 5px;
+}
+
+/* Стили для кнопки Clear */
+button[type="reset"] {
+ background-color: #dc3545;
+}
+
+.x-button-active{
+ border: 3px solid black;
+}
