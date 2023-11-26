@@ -50,22 +50,18 @@ public class AreaCheckServlet extends HttpServlet {
         return checkCircle(xVal, yVal, rVal) || checkRectangle(xVal, yVal, rVal) || checkTriangle(xVal, yVal, rVal);
     }
 
-    // TODO сделай проверку
     private boolean checkCircle(double xVal, double yVal, double rVal) {
-        return true;
+        return xVal <= 0 && yVal >= 0 && Math.sqrt(xVal*xVal + yVal*yVal) <= rVal/2;
     }
 
-    // TODO сделай проверку
     private boolean checkRectangle(double xVal, double yVal, double rVal) {
-        return true;
+        return yVal<=0 && xVal >= 0 && xVal <= rVal && yVal >= -rVal;
     }
 
-    // TODO сделай проверку
     private boolean checkTriangle(double xVal, double yVal, double rVal) {
-        return true;
+        return xVal <= 0 && yVal <= 0 && yVal >= (-(xVal/2) - (rVal/2));
     }
 
-    // TODO сделай проверку
     private boolean validateValues(String xString, String yString, String rString) {
         return validateX(xString) && validateY(yString) && validateR(rString);
     }
@@ -92,8 +88,8 @@ public class AreaCheckServlet extends HttpServlet {
 
     private boolean validateR(String rVal) {
         try {
-            double yValue = Double.parseDouble(rVal);
-            return yValue >= 1 && yValue <= 4;
+            double rValue = Double.parseDouble(rVal);
+            return rValue >= 1 && rValue <= 4;
         } catch (NumberFormatException exception) {
             return false;
         }

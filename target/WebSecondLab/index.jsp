@@ -66,7 +66,6 @@
                     <input class="input-form__hidden_timezone" type="hidden" id="hideDate" name="timezone" value="">
                     <div>
                         <button type="submit">Send</button>
-                        <button class="clearButton" type="reset">Clear</button>
                     </div>
                 </form>
             </div>

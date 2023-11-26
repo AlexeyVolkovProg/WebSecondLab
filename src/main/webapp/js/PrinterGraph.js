@@ -7,7 +7,6 @@ class PrinterGraph {
     COLOR_RED = "#b50300"
     COLOR_GREEN = "#00b509"
     COLOR_MAIN = "#007bff"
-
     constructor() {
         this.canvas = document.getElementById("graph");
         this.ctx = this.canvas.getContext("2d");
@@ -16,14 +15,12 @@ class PrinterGraph {
             this.lastValueR = event.detail;
         });
     }
-
     drawStartImage(){
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.drawAxes();
         this.setPointerAtDot(5);
         this.setPointerAtDot(1);
     }
-
     redrawAll(r){
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.drawGraph(r);
@@ -120,8 +117,6 @@ class PrinterGraph {
             this.drawPoint(dot.x, dot.y, dot.r, dot.status)
         })
     }
-
-
     parseClick(event){
         const xPixels = event.clientX - this.canvas.getBoundingClientRect().left;
         const yPixels = event.clientY - this.canvas.getBoundingClientRect().top;
@@ -133,8 +128,8 @@ class PrinterGraph {
             alert('Невозможно определить радиус. Выберите радиус.');
             return;
         }
-        if(x > 3 || x < -5 || y > 3 || y < -3) {
-            alert("Клик вне зоны графика\nX принимает значения от -5 до 3\n Y от -3 до 3")
+        if(x > 4 || x < -4 || y > 5 || y < -3) {
+            alert("Клик вне зоны графика\nX принимает значения от -4 до 4\n Y от -3 до 5")
             return
         }
         const roundedX = Math.round(x);
@@ -143,6 +138,8 @@ class PrinterGraph {
         console.log(xValue)
         yValue = y.toFixed(2);
         console.log(yValue)
+        document.getElementById("hideX").value = xValue;
+        document.getElementById("selector_y").value = yValue;
     }
 
 
