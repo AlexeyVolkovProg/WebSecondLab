@@ -36,7 +36,7 @@
 
         <div class="main-content">
             <div class="diagram-section">
-                <img class="diagram_image" src="images/diagram.png" alt="diagram_image">
+                <canvas id="graph" width="300" height="300"></canvas>
             </div>
             <div class="user-form-section">
                 <form class="user-form" action="${pageContext.request.contextPath}/web2" method="post">
@@ -70,7 +70,7 @@
                     </div>
                 </form>
             </div>
-            <div class="table-section">
+            <div class="table-section" id="results">
                 <table class="table-results">
                     <tr>
                         <th>X</th>
@@ -96,6 +96,7 @@
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="js/PrinterGraph.js"></script>
 <script src="js/mainValidator.js"></script>
 </body>
 </html>

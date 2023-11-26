@@ -84,6 +84,10 @@
  opacity: 75%;
 }
 
+#graph {
+ background-color: #f8f8f8;
+}
+
 .diagram_image{ /* Картинку в половину flexbox ставим */
  max-width: 100%;
  height: auto;

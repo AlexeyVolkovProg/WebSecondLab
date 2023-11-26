@@ -3,11 +3,15 @@ document.getElementById("hideDate").value = new Date().getTimezoneOffset();
 let rValue;
 let xValue;
 let yValue;
+let lastValueR;
+const canvasPrinter = new PrinterGraph();
 const xButtonList = document.querySelectorAll(".x_button")
 console.log(xButtonList)
 
 
-
+window.onload = function () {
+    canvasPrinter.drawStartImage()
+}
 
 xButtonList.forEach((button) => {
     button.addEventListener('click', (event) => {
@@ -39,37 +43,72 @@ console.log(rField)
 rField.addEventListener('input', (event) => {
     rField.value = rField.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
     rValue = rField.value
+    window.lastValueR = lastValueR;
+    updateLastValueR(rValue)
+    canvasPrinter.redrawAll(rValue)
     console.log(rField.value)
 })
 
+function updateLastValueR(rValue) {
+    window.lastValueR = rValue;
+    const event = new CustomEvent('lastValueRUpdated', { detail: window.lastValueR });
+    window.dispatchEvent(event);
+}
+
 
 function checkValueX() {
+    console.log(xValue)
     if (xValue) {
+        console.log("Xnorm")
         return true;
+    }else if(xValue === 0){
+        return true;
+        console.log("Xnorm")
     } else {
+        console.log("noXnorm")
         return false
     }
 }
 
 function checkValueY() {
+    console.log(xValue)
     if (yValue) {
+        console.log("Ynorm")
         return true;
     } else {
+        console.log("noYnorm")
         return false
     }
 }
 
 function checkValueR() {
     if (rValue) {
+        console.log("Rnorm")
         return true;
     } else {
+        console.log("noRnorm")
         return false
     }
 }
 
-form.addEventListener("submit", function (e) {
-    if (!checkValueX() || !checkValueY() || !checkValueR()) e.preventDefault();
+canvasPrinter.canvas.addEventListener('click', function(event) {
+    canvasPrinter.parseClick(event)
 });
+
+form.addEventListener("submit", function (e) {
+    document.getElementById("hideX").value = xValue;
+    document.getElementById("selector_y").value = yValue;
+    canvasPrinter.redrawAll();
+    if (!checkValueY() ||!checkValueX() ||  !checkValueR()){
+        e.preventDefault()
+    } else{
+        updateLastValueR(rValue)
+    }
+});
+
+
+
+
 
 
 
